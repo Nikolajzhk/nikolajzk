@@ -1,0 +1,163 @@
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { motion } from "framer-motion";
+import { CheckCircle, Code, MonitorSmartphone, TrendingUp } from "lucide-react";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
+
+export default function LandingPage() {
+  return (
+    <main className="min-h-screen bg-gray-50 text-gray-900">
+      <section className="max-w-5xl mx-auto py-20 px-6 text-center">
+        <motion.h1 
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          className="text-4xl md:text-6xl font-extrabold mb-6"
+        >
+          Professionelle Landing Pages der Konverterer
+        </motion.h1>
+        <motion.p 
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          transition={{ delay: 0.2 }}
+          className="text-lg md:text-xl mb-8 max-w-3xl mx-auto"
+        >
+          Jeg designer og udvikler skræddersyede landing pages med ét formål: at omdanne besøgende til betalende kunder.
+        </motion.p>
+        <motion.a 
+          href="#kontakt"
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          transition={{ delay: 0.4 }}
+        >
+          <Button className="text-lg px-6 py-3 rounded-2xl shadow-md">
+            Book en Gratis Samtale
+          </Button>
+        </motion.a>
+      </section>
+
+      <section className="bg-white py-20 px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+          >
+            <h2 className="text-3xl font-bold mb-6">Hvorfor vælge mig?</h2>
+            <ul className="space-y-4 text-left text-base">
+              <li className="flex items-start gap-2"><CheckCircle className="text-green-500" /> Fokus på konvertering og brugervenlighed</li>
+              <li className="flex items-start gap-2"><CheckCircle className="text-green-500" /> Mobilvenligt og hurtigt indlæsningsdesign</li>
+              <li className="flex items-start gap-2"><CheckCircle className="text-green-500" /> Integration med værktøjer som Formspree og Calendly</li>
+              <li className="flex items-start gap-2"><CheckCircle className="text-green-500" /> SEO-optimeret indhold og struktur</li>
+              <li className="flex items-start gap-2"><CheckCircle className="text-green-500" /> Individuel rådgivning og A/B testing</li>
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+          >
+            <Card className="shadow-2xl">
+              <CardContent className="p-6">
+                <form
+                  action="https://formspree.io/f/yourFormID" 
+                  method="POST" 
+                  className="space-y-4"
+                >
+                  <h3 className="text-xl font-semibold mb-4">Kontakt mig</h3>
+                  <Input type="text" name="name" placeholder="Dit navn" required />
+                  <Input type="email" name="email" placeholder="Din email" required />
+                  <Textarea name="message" placeholder="Hvordan kan jeg hjælpe dig?" required />
+                  <Button type="submit" className="w-full">Send Besked</Button>
+                </form>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="bg-gradient-to-br from-indigo-100 via-purple-50 to-white py-20 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <motion.h2 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="text-3xl font-bold mb-10"
+          >
+            Min Proces
+          </motion.h2>
+          <div className="grid md:grid-cols-3 gap-8 text-left">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <div className="flex items-center gap-2 mb-2"><MonitorSmartphone className="text-indigo-500" /><h3 className="text-xl font-semibold">1. Strategi</h3></div>
+              <p>Vi identificerer dine mål og målgrupper og sætter retningen for designet.</p>
+            </motion.div>
+            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.1 }}>
+              <div className="flex items-center gap-2 mb-2"><Code className="text-indigo-500" /><h3 className="text-xl font-semibold">2. Design & Udvikling</h3></div>
+              <p>Responsivt og moderne design med fokus på performance og branding.</p>
+            </motion.div>
+            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.2 }}>
+              <div className="flex items-center gap-2 mb-2"><TrendingUp className="text-indigo-500" /><h3 className="text-xl font-semibold">3. Lancering & Optimering</h3></div>
+              <p>Overvågning, test og forbedringer efter lancering – vi sikrer resultater.</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-20 px-6 text-center">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold mb-6">Hvad siger mine kunder?</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <Card>
+                <CardContent className="p-6">
+                  <p className="italic">“Super professionel og hurtig levering. Vores konverteringsrate steg med 37% på under en måned!”</p>
+                  <p className="mt-4 font-semibold">– Anna, Marketingchef hos GrowCo</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.1 }}>
+              <Card>
+                <CardContent className="p-6">
+                  <p className="italic">“Han lyttede til vores behov og kom med værdifulde input. Resultatet var langt over forventning.”</p>
+                  <p className="mt-4 font-semibold">– Jesper, Ejer af FitOnline</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section id="kontakt" className="bg-gray-100 py-20 px-6 text-center">
+        <h2 className="text-3xl font-bold mb-4">Book en Gratis Rådgivning</h2>
+        <p className="mb-6 max-w-xl mx-auto">Vælg et tidspunkt der passer dig, og lad os tage en snak om hvordan jeg kan hjælpe dig med at opnå flere leads og salg.</p>
+        <div className="max-w-2xl mx-auto">
+          <iframe 
+            src="https://calendly.com/ditbrugernavn/30min" 
+            width="100%" 
+            height="600" 
+            frameBorder="0"
+            title="Book en samtale"
+            className="rounded-xl shadow-md"
+          ></iframe>
+        </div>
+      </section>
+
+      <footer className="py-10 text-center text-sm text-gray-500">
+        &copy; {new Date().getFullYear()} Din Navn. Udviklet med passion og fokus på resultater.
+      </footer>
+    </main>
+  );
+}
