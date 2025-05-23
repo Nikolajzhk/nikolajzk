@@ -1,0 +1,15 @@
+{
+  "name": "landing-page",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "framer-motion": "^11.0.0",
+    "lucide-react": "^0.266.0",
+    "tailwindcss": "^3.3.0",
+    "classnames": "^2.3.2"
+  }
+}
